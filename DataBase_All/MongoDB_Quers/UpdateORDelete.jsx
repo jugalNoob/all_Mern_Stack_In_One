@@ -12,6 +12,12 @@ You're doing great, Jugal! Here's a cleaned-up, corrected, and well-organized gu
 ✅ 🚀 Correct syntax fixes + added edge-case tips
 
 
+MongoDB Update() Methods
+MongoDB UpdateOne() Methods
+MongoDB UpdateMany() Methods
+MongoDB replaceone() Methods
+
+
 
 ✅ MongoDB Update & Delete Commands – Complete Guide
 🔧 1. updateOne() and updateMany()
@@ -88,9 +94,7 @@ db.dataall.updateMany(
   { $rename: { item: "jugalsharma" } }
 )
 🆕 $upsert – Update or Insert
-js
-Copy
-Edit
+
 db.dataall.updateOne(
   { name: "coulu" },
   { $set: { age: 100 } },
@@ -129,21 +133,30 @@ db.users.updateMany(
   { name: "amit" },
   { $pop: { hobbies: 1 } }   // 1 = remove last, -1 = remove first
 )
+
+
+
+
+
+Delete Many  Operations :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Delete Operations
+Delete Single Document Using MongoShell
+Delete Multiple Document Using MongoShell
+Delete Database using MongoShell
+MongoDB deleteone() Method
+
+
 🗑️ 4. Deleting Documents
 ❌ deleteOne()
-js
-Copy
-Edit
+
 db.dataall.deleteOne({ item: "canvas" })  // Delete one match
 ❌ deleteMany()
-js
-Copy
-Edit
+
 db.dataall.deleteMany({ qty: 10 })  // Delete all where qty = 10
 ❌ Delete All Documents
-js
-Copy
-Edit
+
+
 db.dataall.deleteMany({})  // Delete all documents
 ✅ Summary Table: Array Operators
 

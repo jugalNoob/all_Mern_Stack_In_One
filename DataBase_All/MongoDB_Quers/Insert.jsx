@@ -1,6 +1,16 @@
 2:::: Insert  and insertMany ......................................
 
 
+
+Insert Operations
+MongoDB Insert() Methods
+MongoDB InsertOne() Methods
+MongoDB InsertMany() Methods
+
+
+
+
+
  db.dataall.insertOne({
   item: 'canvas',
   qty: 100,
