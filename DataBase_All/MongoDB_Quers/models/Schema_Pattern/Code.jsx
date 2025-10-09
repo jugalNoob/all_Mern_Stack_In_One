@@ -1,3 +1,15 @@
+| Model / Collection                | Pattern Used            | Reason / Use Case                                                                                       | Notes                                                               |
+| --------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **User**                          | Discriminator + Outlier | Different roles (Customer, Admin) share common fields; profile data (address, avatar) is large/volatile | Clean inheritance; main user document stays small                   |
+| **Profile**                       | Outlier                 | Large or optional fields separated                                                                      | Avoid bloating User document                                        |
+| **Product**                       | Embedded Documents      | Specs, tags, images are tightly related to product                                                      | Fast read of product details; data usually not growing indefinitely |
+| **Order**                         | Referenced Documents    | Items reference Products, Order references User                                                         | Avoid huge document; supports reusability and relationships         |
+| **Review**                        | Polymorphic             | One review can belong to Product or Order                                                               | Reusable system for multiple models                                 |
+| **Log**                           | Bucket Pattern          | Time-series logs grouped by date                                                                        | Efficient queries on date ranges; reduces document count            |
+| **Admin**                         | Discriminator           | Admin has extra fields (accessLevel)                                                                    | Shared base user fields, role-specific fields                       |
+| **Comments / Reviews (Optional)** | Polymorphic             | Supports comments on multiple models                                                                    | Scalable, reusable                                                  |
+
+
 
 🛍️ Scenario: E-commerce Platform
 We’ll implement a MERN stack project with:

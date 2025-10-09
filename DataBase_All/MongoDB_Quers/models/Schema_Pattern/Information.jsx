@@ -1,3 +1,14 @@
+| Model   | Pattern       | Reason / Use Case                              |
+| ------- | ------------- | ---------------------------------------------- |
+| User    | Discriminator | Role-based fields (Admin vs Customer)          |
+| Profile | Outlier       | Large/volatile info separate from User         |
+| Product | Embedded      | Specs, tags, images tightly coupled            |
+| Order   | Referenced    | References Product & User to avoid duplication |
+| Review  | Polymorphic   | Review can belong to multiple models           |
+| Log     | Bucket        | Time-series data grouped by date               |
+
+
+
 📄 2. Schema Pattern Cheat Sheet (with Use Cases)
 
 | Pattern       | Use Case Example             | Pros                               | Cons                            |

@@ -1,8 +1,6 @@
 ✅ MONGODB – Full CRUD & Schema Master Reference
 🧠 00. Mongoose Schema Data Types
-js
-Copy
-Edit
+
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -17,6 +15,20 @@ const userSchema = new mongoose.Schema({
   balance: mongoose.Schema.Types.Decimal128,     // Decimal128 (money)
   preferences: { type: Map, of: String }         // Map<Key, String>
 });
+
+
+Query on Embedded/Nested Documents
+Query an Array
+Query for Null or Missing Fields
+MongoDB Find() Method
+MongoDB FindOne() Method
+MongoDB FindAndModify() Method
+MongoDB FindOneAndDelete() Method
+MongoDB FindOneAndUpdate() Method
+MongoDB FindOneAndReplace() Method
+Query and Projection Operators
+MongoDB Operators
+
 
 const User = mongoose.model('User', userSchema);
 🔍 1. FIND Operations

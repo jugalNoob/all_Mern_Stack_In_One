@@ -1,0 +1,18 @@
+stages:
+  - sync
+
+# -----------------------------
+# 1️⃣ Sync GitLab to GitHub
+# -----------------------------
+sync_to_github:
+  stage: sync
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache git
+  script:
+    - git config --global user.email "you@example.com"
+    - git config --global user.name "Your Name"
+    - git remote add github https://$GITHUB_TOKEN@github.com/<username>/<repo>.git
+    - git push -u github main
+  only:
+    - main
